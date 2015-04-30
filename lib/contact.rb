@@ -16,6 +16,10 @@ class Phone
   attr_accessor :cell_number
 
   define_method(:initialize) do |attributes|
-    @cell_number = attributes.fetch(:cell_number)
+    if attributes.has_key?(:cell_number)
+      @cell_number = attributes.fetch(:cell_number)
+    else
+      @cell_number = nil
+    end
   end
 end
