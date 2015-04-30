@@ -26,7 +26,17 @@ class Phone
     else
       @home_number = nil
     end
-
   end
+end
 
+class Email
+  attr_accessor :personal_email
+
+  define_method(:initialize) do |attributes|
+    if attributes.has_key?(:personal_email)
+      @personal_email = attributes.fetch(:personal_email)
+    else
+      @persoanl_email = nil
+    end
+  end
 end
