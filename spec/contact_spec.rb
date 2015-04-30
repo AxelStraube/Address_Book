@@ -56,4 +56,34 @@ describe(Email) do
       expect(email.personal_email).to(eq("exampleemail@gmail.com"))
     end
   end
+
+  describe('#work_email') do
+    it('sets and gets a persons work e-mail') do
+      email = Email.new({:work_email => "work@work.com"})
+      expect(email.work_email).to(eq("work@work.com"))
+    end
+  end
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
