@@ -40,4 +40,11 @@ describe(Phone) do
       expect(number.cell_number).to(eq(1234567890))
     end
   end
+
+  describe('#home_number') do
+    it('sets and gets a home phone number') do
+      number = Phone.new({:home_number => 555_666_7777})
+      expect(number.home_number).to(eq(5556667777))
+    end
+  end
 end
