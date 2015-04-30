@@ -23,4 +23,12 @@ describe(Contact) do
         expect(person.last_name).to(eq('Johnson'))
       end
     end
+
+    describe('#birthday') do
+      it ('sets and gets a birthday') do
+        person = Contact.new('Alfred', 'Johnson')
+        person.birthday = Time.new(1955, 04, 30)
+        expect(person.birthday.to_s).to(eq("1955-04-30 00:00:00 -0700"))
+      end
+    end
 end
