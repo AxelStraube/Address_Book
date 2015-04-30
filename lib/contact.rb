@@ -13,19 +13,11 @@ class Person
 end
 
 class Phone
-  attr_accessor :cell_number, :home_number
+  attr_accessor :phone_number, :number_type
 
   define_method(:initialize) do |attributes|
-    if attributes.has_key?(:cell_number)
-      @cell_number = attributes.fetch(:cell_number)
-    else
-      @cell_number = nil
-    end
-    if attributes.has_key?(:home_number)
-      @home_number = attributes.fetch(:home_number)
-    else
-      @home_number = nil
-    end
+    @phone_number = attributes.fetch(:phone_number)
+    @number_type = attributes.fetch(:number_type)
   end
 end
 

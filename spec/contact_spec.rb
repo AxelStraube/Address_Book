@@ -34,17 +34,11 @@ describe(Person) do
 end
 
 describe(Phone) do
-  describe('#cell_number') do
-    it('sets and gets a cell phone number') do
-      number = Phone.new({:cell_number => 123_456_7890})
-      expect(number.cell_number).to(eq(1234567890))
-    end
-  end
-
-  describe('#home_number') do
-    it('sets and gets a home phone number') do
-      number = Phone.new({:home_number => 555_666_7777})
-      expect(number.home_number).to(eq(5556667777))
+  describe('#phone_number') do
+    it('sets and gets a phone number') do
+      number = Phone.new(:phone_number => 123_456_7890, :number_type => 'cell')
+      expect(number.phone_number).to(eq(1234567890))
+      expect(number.number_type).to(eq('cell'))
     end
   end
 end
@@ -72,9 +66,6 @@ describe(MailingAddress) do
     end
   end
 end
-
-
-
 
 
 
