@@ -31,6 +31,22 @@ describe(Person) do
       expect(person.birthday.to_s).to(eq("1955-04-30 00:00:00 -0700"))
     end
   end
+
+  describe('#phone') do
+    it('gets and sets a phone object') do
+      person = Person.new({:first_name => 'Alfred', :last_name => 'Johnson'})
+      person.phone = Phone.new({:phone_number => 555_666_7777, :number_type => 'home'})
+      expect(person.phone.phone_number).to(eq(555_666_7777))
+    end
+  end
+
+  describe('#email') do
+    it('sets and gets an email object') do
+      person = Person.new({:first_name => 'Alfred', :last_name => 'Johnson'})
+      person.email = Email.new({:email_address => "al@gmail.com", :email_type => 'personal'})
+      expect(person.email.email_address).to(eq('al@gmail.com'))
+    end
+  end
 end
 
 describe(Phone) do

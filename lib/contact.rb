@@ -1,5 +1,5 @@
 class Person
-  attr_accessor :first_name, :last_name, :birthday
+  attr_accessor :first_name, :last_name, :birthday, :phone, :email
 
   define_method(:initialize) do |attributes|
     @first_name = attributes.fetch(:first_name)
