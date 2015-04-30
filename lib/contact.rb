@@ -1,4 +1,4 @@
-class Contact
+class Person
   attr_accessor :first_name, :last_name, :birthday
 
   define_method(:initialize) do |attributes|
