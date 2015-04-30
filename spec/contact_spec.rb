@@ -63,7 +63,18 @@ describe(Email) do
       expect(email.work_email).to(eq("work@work.com"))
     end
   end
+end
 
+describe(MailingAddress) do
+  describe('#work_address') do
+    it('sets and gets the work address') do
+      place = MailingAddress.new({:address_line => '123 road st',
+                                 :city         => 'Townington',
+                                 :state        => 'OfMind',
+                                 :zip          => 12345 })
+    expect(place.work_address).to(eq('123 road st, Townington, OfMind, 12345'))
+    end
+  end
 end
 
 
