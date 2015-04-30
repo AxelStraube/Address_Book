@@ -50,19 +50,14 @@ describe(Phone) do
 end
 
 describe(Email) do
-  describe('#personal_email') do
-    it("sets and gets someone's personal e-mail") do
-      email = Email.new({:personal_email => "exampleemail@gmail.com"})
-      expect(email.personal_email).to(eq("exampleemail@gmail.com"))
+  describe('#email_address') do
+    it("sets and gets someone's e-mail") do
+      my_email = Email.new({:email_address => "email@gmail.com", :email_type => 'personal'})
+      expect(my_email.email_address).to(eq("email@gmail.com"))
+      expect(my_email.email_type).to(eq('personal'))
     end
   end
 
-  describe('#work_email') do
-    it('sets and gets a persons work e-mail') do
-      email = Email.new({:work_email => "work@work.com"})
-      expect(email.work_email).to(eq("work@work.com"))
-    end
-  end
 end
 
 describe(MailingAddress) do

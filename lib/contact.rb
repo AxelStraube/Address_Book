@@ -30,19 +30,11 @@ class Phone
 end
 
 class Email
-  attr_accessor :personal_email, :work_email
+  attr_accessor :email_address, :email_type
 
   define_method(:initialize) do |attributes|
-    if attributes.has_key?(:personal_email)
-      @personal_email = attributes.fetch(:personal_email)
-    else
-      @personal_email = nil
-    end
-    if attributes.has_key?(:work_email)
-      @work_email = attributes.fetch(:work_email)
-    else
-      @work_email = nil
-    end
+    @email_address = attributes.fetch(:email_address)
+    @email_type = attributes.fetch(:email_type)
   end
 end
 
