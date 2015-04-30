@@ -66,23 +66,14 @@ describe(Email) do
 end
 
 describe(MailingAddress) do
-  describe('#work_address') do
-    it('sets and gets the work address') do
+  describe('#address') do
+    it('sets and gets the address') do
       place = MailingAddress.new({:address_line => '123 road st',
-                                 :city         => 'Townington',
-                                 :state        => 'OfMind',
-                                 :zip          => 12345 })
-    expect(place.work_address).to(eq('123 road st, Townington, OfMind, 12345'))
-    end
-  end
-
-  describe('#home_address') do
-    it('sets and gets the home address') do
-      place = MailingAddress.new({:address_line => '123 avenue st',
-                                 :city         => 'Villageville',
-                                 :state        => 'OfMind',
-                                 :zip          => 12345 })
-    expect(place.home_address).to(eq('123 avenue st, Villageville, OfMind, 12345'))
+                                 :city          => 'Townington',
+                                 :state         => 'OfMind',
+                                 :zip           => 12345,
+                                 :address_type  => 'home'})
+    expect(place.address).to(eq('123 road st, Townington, OfMind, 12345'))
     end
   end
 end
