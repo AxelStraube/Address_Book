@@ -44,7 +44,19 @@ class Email
       @work_email = nil
     end
   end
+end
 
+class MailingAddress
+  attr_accessor :address, :address_line, :city, :state, :zip, :address_type
+
+  define_method(:initialize) do |attributes|
+    @address_line = attributes.fetch(:address_line)
+    @city = attributes.fetch(:city)
+    @state = attributes.fetch(:state)
+    @zip = attributes.fetch(:zip)
+    @address_type = attributes.fetch(:address_type)
+    @address = [@address_line, @city, @state, @zip].join(", ")
+  end
 end
 
 
