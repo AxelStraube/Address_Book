@@ -11,3 +11,11 @@ class Person
     end
   end
 end
+
+class Phone
+  attr_accessor :cell_number
+
+  define_method(:initialize) do |attributes|
+    @cell_number = attributes.fetch(:cell_number)
+  end
+end
