@@ -48,3 +48,12 @@ describe(Phone) do
     end
   end
 end
+
+describe(Email) do
+  describe('#personal_email') do
+    it("sets and gets someone's personal e-mail") do
+      email = Email.new({:personal_email => 'exampleemail@gmail.com'})
+      expect(email.personal_email).to(eq(exampleemail@gmail.com))
+    end
+  end
+end
