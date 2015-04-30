@@ -1,4 +1,5 @@
 class Person
+  @@people = []
   attr_accessor :first_name, :last_name, :birthday,
                 :phone, :email, :mailing_address
 
@@ -10,6 +11,10 @@ class Person
     else
       @birthday = nil
     end
+  end
+
+  define_method(:save) do
+    @@people.push(self)
   end
 end
 
