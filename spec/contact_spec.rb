@@ -34,10 +34,10 @@ describe(Person) do
 end
 
 describe(Phone) do
-  describe('#phone_number') do
-    it('sets and gets a phone number') do
+  describe('#cell_number') do
+    it('sets and gets a cell phone number') do
       number = Phone.new({:cell_number => 123_456_7890})
-      expect(number.phone_number).to(eq(1234567890))
+      expect(number.cell_number).to(eq(1234567890))
     end
   end
 end
