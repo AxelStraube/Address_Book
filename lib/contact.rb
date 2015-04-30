@@ -16,6 +16,10 @@ class Person
   define_method(:save) do
     @@people.push(self)
   end
+
+  define_singleton_method(:all) do
+    @@people
+  end
 end
 
 class Phone

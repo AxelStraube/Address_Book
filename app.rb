@@ -16,7 +16,8 @@ post('/address_book') do
   email = params.fetch('email')
   @person = Person.new({:first_name => first_name, :last_name => last_name})
   @name = @person.first_name
-  # @person.save()
+  @person.save()
+  @people = Person.all()
   erb(:address_book)
 end
 
