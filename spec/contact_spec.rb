@@ -8,11 +8,11 @@ describe(Contact) do
       end
     end
 
-    describe('#name') do
+    describe('#first_name') do
       it('sets and gets name') do
         person = Contact.new('Cory')
-        person.name = "John"
-        expect(person.name).to(eq('John'))
+        person.first_name = "John"
+        expect(person.first_name).to(eq('John'))
       end
     end
 end
