@@ -28,7 +28,7 @@ describe(Person) do
     it ('sets and gets a birthday') do
       person = Person.new({:first_name => 'Alfred', :last_name => 'Johnson'})
       person.birthday = Time.new(1955, 04, 30)
-      expect(person.birthday.to_s).to(eq("1955-04-30 00:00:00 -0700"))
+      expect(person.birthday().to_s).to(eq("1955-04-30 00:00:00 -0700"))
     end
   end
 
@@ -36,7 +36,7 @@ describe(Person) do
     it('gets and sets a phone object') do
       person = Person.new({:first_name => 'Alfred', :last_name => 'Johnson'})
       person.phone = Phone.new({:phone_number => 555_666_7777, :number_type => 'home'})
-      expect(person.phone.phone_number).to(eq(555_666_7777))
+      expect(person.phone().phone_number()).to(eq(555_666_7777))
     end
   end
 
@@ -44,7 +44,19 @@ describe(Person) do
     it('sets and gets an email object') do
       person = Person.new({:first_name => 'Alfred', :last_name => 'Johnson'})
       person.email = Email.new({:email_address => "al@gmail.com", :email_type => 'personal'})
-      expect(person.email.email_address).to(eq('al@gmail.com'))
+      expect(person.email().email_address()).to(eq('al@gmail.com'))
+    end
+  end
+
+  describe('#mailing_address') do
+    it('sets and gets a mailing address object') do
+      person = Person.new({:first_name => 'Alfred', :last_name => 'Johnson'})
+      person.mailing_address = MailingAddress.new({:address_line => '123 road st',
+                                                     :city          => 'Townington',
+                                                     :state         => 'OfMind',
+                                                     :zip           => 12345,
+                                                     :address_type  => 'home'})
+      expect(person.mailing_address().address()).to(eq('123 road st, Townington, OfMind, 12345'))
     end
   end
 end
